@@ -1,0 +1,108 @@
+div {
+  display: grid;
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: 100%;    
+    gap: 10px;
+    justify-content: center;
+
+}
+
+figure {
+  border: 1px solid #090909;
+  
+}
+
+figcaption{ 
+  padding: 2px;
+  text-align: center;
+}
+
+.gallery img{
+  width: 100%;
+}
+
+
+@media only screen and (min-width:772px) {
+    .grid {
+        background-color: pink;
+       grid-template-columns: 50% 50%;
+       justify-content: space-evenly;
+       align-items: center;
+    }
+    .gallery img{
+      width: 300px;
+    }
+    figure img{
+       border-top-left-radius: 50% 50%; 
+       border-top-right-radius: 50% 50%; 
+       border-bottom-right-radius: 50% 50%; 
+       border-bottom-left-radius: 50% 50%; 
+      border: 2px solid #f3f3f3;
+    }
+   figure  {
+        display: grid;
+        border: none;
+      }
+   /* every 9 img take both columns */
+    .grid .item:nth-child(9){
+        grid-template-columns: repeat(1, 1fr);
+      }
+    }
+    @media only screen and (min-width:992px) {
+
+      .grid{
+        display: grid;
+        grid-template-columns: 50% 50%;    
+        /*border: 2px solid #0c0c0c;*/
+      }
+
+      figure  {
+        display: grid;
+
+      }
+      figure img {
+        border-radius:2%;
+      }
+      
+      figcaption {
+        padding: 5px;
+        padding-left:90px;
+        text-align: left;
+    }
+
+         /* every 3 img take both columns */
+      .grid:nth-child(3){
+          grid-column: 1 / span 2;
+        } 
+      }
+
+
+      @media (prefers-reduced-motion:reduce){
+        main {
+          scroll-behavior:inherit;
+        }
+      } 
+
+      .theme-a {
+        background: #dca;
+        color: #731;
+      }
+      @media (prefers-color-scheme: dark) {
+        .theme-a.adaptive {
+          background: rgb(96, 60, 25);
+          outline: 5px dashed #000;
+        }
+        .theme-a figure {
+          font-style: black;
+          border: #000 solid 2px;
+        }
+      }
+
+
+      
+
+
+  
